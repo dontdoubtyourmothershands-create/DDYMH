@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Don’t Doubt Your Mother’s Hands LLC | 24-Hour Childcare</title>
+<meta name="description" content="Don’t Doubt Your Mother’s Hands LLC (DDYMH) provides licensed 24-hour, non-traditional childcare across New York City—supporting families who need care outside traditional hours." />
+<meta name="theme-color" content="#0B3C5D" />
+<style>
+:root{
+--ink:#0B3C5D;
+--ink2:#0A2D44;
+--bg:#0B3C5D;
+--paper:#ffffff;
+--soft:#F5F7FA;
+--muted:#5A6772;
+--line:#E6ECF2;
+--accent:#00A9A5;
+--accent2:#F3C969;
+--radius:18px;
+--shadow:0 10px 30px rgba(11,60,93,.12);
+--shadow2:0 8px 18px rgba(0,0,0,.08);
+--max:1100px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:#0d1117;background:var(--soft)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(245,247,250,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;min-width:240px}
+.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--ink));box-shadow:var(--shadow2)}
+.brand strong{display:block;font-size:14px;line-height:1.1;color:var(--ink)}
+.brand span{display:block;font-size:12px;color:var(--muted)}
+nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{font-size:13px;color:var(--ink2);padding:8px 10px;border-radius:12px}
+nav a:hover{background:#ffffff;border:1px solid var(--line);padding:7px 9px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:10px 14px;font-weight:700;font-size:13px;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--ink);color:#fff;box-shadow:var(--shadow2)}
+.btn.primary:hover{background:var(--ink2)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:#d8e2ec}
+
+/* Hero */
+.hero{padding:54px 0 24px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero .card{padding:22px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:12px;color:var(--ink);background:rgba(0,169,165,.12);border:1px solid rgba(0,169,165,.25);padding:7px 10px;border-radius:999px}
+h1{margin:12px 0 8px;font-size:36px;line-height:1.08;color:var(--ink)}
+.sub{margin:0 0 14px;color:var(--muted);font-size:15px;line-height:1.5}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pill{font-size:12px;color:var(--ink2);background:var(--soft);border:1px solid var(--line);padding:8px 10px;border-radius:999px}
+
+.side{padding:22px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.side:before{content:"";position:absolute;inset:-120px -120px auto auto;width:260px;height:260px;border-radius:60px;background:radial-gradient(circle at 30% 30%, rgba(243,201,105,.45), rgba(0,169,165,.18), rgba(11,60,93,.05));transform:rotate(20deg)}
+.mini h3{margin:0 0 6px;font-size:14px;color:var(--ink)}
+.mini p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+.mini{position:relative;z-index:1;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:16px;padding:14px}
+
+/* Sections */
+section{padding:22px 0}
+.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.section-title h2{margin:0;font-size:18px;color:var(--ink)}
+.section-title p{margin:0;color:var(--muted);font-size:13px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{padding:16px}
+.icon{width:40px;height:40px;border-radius:14px;background:rgba(11,60,93,.08);display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:900}
+.feature h3{margin:10px 0 6px;font-size:14px;color:var(--ink)}
+.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.list{padding:16px}
+.list ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.55}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+
+/* Survey callout */
+.callout{padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.callout strong{color:var(--ink)}
+.callout p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+/* Contact */
+.contact{padding:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+label{display:block;font-size:12px;color:var(--ink);font-weight:700;margin-bottom:6px}
+input,textarea,select{width:100%;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:13px}
+textarea{min-height:110px;grid-column:1/-1;resize:vertical}
+.full{grid-column:1/-1}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;grid-column:1/-1;margin-top:4px}
+
+/* Footer */
+footer{padding:22px 0 40px;color:var(--muted);font-size:12px}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}
+
+/* Responsive */
+@media (max-width: 900px){
+.hero-grid{grid-template-columns:1fr;}
+.grid3{grid-template-columns:1fr;}
+.two{grid-template-columns:1fr;}
+form{grid-template-columns:1fr;}
+nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="wrap">
+<div class="row">
+<a class="brand" href="#top" aria-label="Home">
+<div class="mark" aria-hidden="true"></div>
+<div>
+<strong>Don’t Doubt Your Mother’s Hands LLC</strong>
+<span>24-Hour Childcare • NYC-Wide</span>
+</div>
+</a>
+
+<nav aria-label="Site">
+<a href="#services">Services</a>
+<a href="#how">How It Works</a>
+<a href="#inclusion">Inclusion</a>
+<a href="#survey">Survey</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a class="btn primary" href="#contact">Request Info</a>
+</div>
+</div>
+</div>
+
+<main id="top">
+<div class="wrap hero">
+<div class="hero-grid">
+<div class="card">
+<div class="kicker">NYC-Wide • Non-Traditional Hours • Family-Centered</div>
+<h1>Licensed 24-Hour Childcare for families who need care beyond 9–5.</h1>
+<p class="sub">
+Don’t Doubt Your Mother’s Hands LLC (DDYMH) is building safe, reliable childcare access across <b>New York City</b>
+for families who need evening, overnight, and early-morning care.
+</p>
+
+<div class="hero-cta">
+<a class="btn primary" href="#survey">Take the NYC Survey</a>
+<a class="btn ghost" href="#contact">Partner or Refer Families</a>
+</div>
+
+<div class="pill-row" aria-label="Highlights">
+<div class="pill">NYC (All 5 Boroughs)</div>
+<div class="pill">24-Hour / Overnight Care</div>
+<div class="pill">Inclusive & Supportive</div>
+<div class="pill">Grant & Lender Ready</div>
+</div>
+</div>
+
+<div class="card side">
+<div class="mini">
+<h3>What we provide</h3>
+<p>Licensed childcare designed for non-traditional schedules—built around safety, routines, and family trust.</p>
+</div>
+<div class="mini">
+<h3>Who it’s for</h3>
+<p>Families who need care outside traditional hours due to work, education, caregiving, emergencies, or other needs.</p>
+</div>
+<div class="mini">
+<h3>Where we’re launching</h3>
+<p>Our first site will be selected based on licensing feasibility, property availability, and community demand across NYC.</p>
+</div>
+</div>
+</div>
+</div>
+
+<section id="services">
+<div class="wrap">
+<div class="section-title">
+<h2>Services</h2>
+<p>Care outside the usual hours—built for real life.</p>
+</div>
+
+<div class="grid3">
+<div class="card feature">
+<div class="icon">24</div>
+<h3>24-Hour / Overnight Care</h3>
+<p>Evenings, overnight, and early mornings with structured routines and safe rest periods.</p>
+</div>
+<div class="card feature">
+<div class="icon">🧸</div>
+<h3>Age-Appropriate Programming</h3>
+<p>Infant, toddler, and school-age support with learning, play, and calm wind-down transitions.</p>
+</div>
+<div class="card feature">
+<div class="icon">🥗</div>
+<h3>Meals & Snacks</h3>
+<p>Nutrition-aligned meals/snacks with allergy awareness and family communication.</p>
+</div>
+</div>
+
+<p class="note">Note: Final service offerings and enrollment are subject to licensing category, location, and regulatory requirements.</p>
+</div>
+</section>
+
+<section id="how">
+<div class="wrap">
+<div class="section-title">
+<h2>How it works</h2>
+<p>Simple, safe, and consistent.</p>
+</div>
+
+<div class="two">
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Enrollment & Scheduling</h3>
+<ul>
+<li>Families submit an interest form and scheduling needs.</li>
+<li>We confirm availability, paperwork requirements, and onboarding steps.</li>
+<li>Care schedules may include recurring overnight blocks or flexible coverage (as permitted).</li>
+</ul>
+</div>
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Safety & Compliance</h3>
+<ul>
+<li>Background checks, CPR/First Aid, and required trainings.</li>
+<li>Documented routines, safe rest periods, and incident reporting.</li>
+<li>Family communication through secure childcare software (check-in/out and updates).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="inclusion">
+<div class="wrap">
+<div class="section-title">
+<h2>Inclusive care</h2>
+<p>Welcoming support for children with diverse needs.</p>
+</div>
+
+<div class="two">
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Autism & disability inclusion</h3>
+<ul>
+<li>Individualized routines and flexible rest support.</li>
+<li>Sensory-friendly environments and calming tools.</li>
+<li>Staff training aligned to inclusive care practices.</li>
+</ul>
+<p class="note">Specific accommodations depend on licensing rules, staffing ratios, and each child’s needs.</p>
+</div>
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Partner with us</h3>
+<ul>
+<li>Reserved slots or childcare subsidy partnerships</li>
+<li>Space partnerships (evenings/overnights)</li>
+<li>In-kind support: equipment, supplies, training</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="survey">
+<div class="wrap">
+<div class="card callout">
+<div>
+<strong>NYC Childcare Desert Survey</strong>
+<p>Help us measure demand for 24-hour childcare—especially in areas with limited childcare options.</p>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<a class="btn primary" href="#" id="surveyLink">Open Survey</a>
+<a class="btn ghost" href="#contact">Share Feedback</a>
+</div>
+</div>
+<p class="note">Replace the survey link once your Google Form is created (we can add it for you).</p>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div class="section-title">
+<h2>Contact</h2>
+<p>Request info, partnership discussions, or updates.</p>
+</div>
+
+<div class="card contact">
+<p class="sub" style="margin:0">Use this form to send a message. (This demo page doesn’t send emails yet—see notes below.)</p>
+
+<form id="contactForm">
+<div>
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Your name" required />
+</div>
+<div>
+<label for="email">Email</label>
+<input id="email" type="email" name="email" placeholder="you@email.com" required />
+</div>
+<div>
+<label for="borough">Borough</label>
+<select id="borough" name="borough">
+<option>Brooklyn</option>
+<option>Manhattan</option>
+<option>Queens</option>
+<option>The Bronx</option>
+<option>Staten Island</option>
+<option>Not sure</option>
+</select>
+</div>
+<div>
+<label for="topic">Topic</label>
+<select id="topic" name="topic">
+<option>Family inquiry</option>
+<option>Partnership</option>
+<option>Space / property lead</option>
+<option>Grant / funding</option>
+<option>Other</option>
+</select>
+</div>
+<div class="full">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us what you need…" required></textarea>
+</div>
+<div class="form-actions">
+<button class="btn primary" type="submit">Save Message</button>
+<button class="btn ghost" type="button" id="copyBtn">Copy Message Text</button>
+</div>
+</form>
+
+<p class="note"><b>To make this live:</b> we can connect the form to Google Forms, Formspree, Mailchimp, or a simple backend.
+If you tell me where you want to host the site (Wix, Squarespace, Google Sites, WordPress, GitHub Pages), I’ll tailor it.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap foot">
+<div>
+<div><b style="color:var(--ink)">Don’t Doubt Your Mother’s Hands LLC</b></div>
+<div>24-Hour Childcare • NYC-Wide • EIN: 88-2743668</div>
+</div>
+<div>© <span id="year"></span> DDYMH. All rights reserved.</div>
+</div>
+</footer>
+</main>
+
+<script>
+// Set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Replace this with your Google Form URL when ready:
+const GOOGLE_FORM_URL = ""; // e.g., "https://forms.gle/XXXX"
+const surveyLink = document.getElementById('surveyLink');
+if (GOOGLE_FORM_URL) surveyLink.href = GOOGLE_FORM_URL;
+
+// Contact form (local demo): save message to clipboard-friendly text
+const form = document.getElementById('contactForm');
+const copyBtn = document.getElementById('copyBtn');
+
+function buildMessage(){
+const data = new FormData(form);
+return [
+`Name: ${data.get('name')}`,
+`Email: ${data.get('email')}`,
+`Borough: ${data.get('borough')}`,
+`Topic: ${data.get('topic')}`,
+`Message: ${data.get('message')}`
+].join('\n');
+}
+
+form.addEventListener('submit', (e)=>{
+e.preventDefault();
+const text = buildMessage();
+localStorage.setItem('ddymh_last_message', text);
+alert('Saved! (Demo)\n\nNext: connect this form to email or Google Sheets.');
+form.reset();
+});
+
+copyBtn.addEventListener('click', async ()=>{
+const text = localStorage.getItem('ddymh_last_message') || buildMessage();
+try{
+await navigator.clipboard.writeText(text);
+alert('Copied to clipboard!');
+}catch{
+alert('Copy failed. You can manually copy from the message fields.');
+}
+});
+</script>
+</body>
+</html>
