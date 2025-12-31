@@ -110,7 +110,75 @@ onerror="this.style.display='none';"
 <a href="#how">How It Works</a>
 <a href="#inclusion">Inclusion</a>
 <a href="#survey">Survey</a>
-<a href="#contact">Contact</a>
+<section id="contact">
+<div class="wrap">
+<div class="section-title">
+<h2>Contact</h2>
+<p>Share your affirmation, ask a question, or request info.</p>
+</div>
+
+<div class="card contact">
+<p class="sub" style="margin:0">
+We’d love to hear from you. Submit your affirmation + message below, and we’ll follow up.
+</p>
+
+<p class="note" style="margin-top:10px">
+Email us anytime: <a href="mailto:aamber2107@gmail.com"><b>aamber2107@gmail.com</b></a>
+</p>
+
+<form id="contactForm">
+<div>
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Your name" required />
+</div>
+
+<div>
+<label for="email">Your Email</label>
+<input id="email" type="email" name="email" placeholder="you@email.com" required />
+</div>
+
+<div>
+<label for="affirmation">Affirmation</label>
+<select id="affirmation" name="affirmation" required>
+<option value="" selected disabled>Select one…</option>
+<option>I am doing my best, and my best is enough.</option>
+<option>My child is safe, supported, and loved.</option>
+<option>I deserve dependable childcare and peace of mind.</option>
+<option>We are building a stronger community together.</option>
+<option>Other (I will write my own below)</option>
+</select>
+</div>
+
+<div>
+<label for="borough">Borough</label>
+<select id="borough" name="borough">
+<option>Brooklyn</option>
+<option>Manhattan</option>
+<option>Queens</option>
+<option>The Bronx</option>
+<option>Staten Island</option>
+<option>Not sure</option>
+</select>
+</div>
+
+<div class="full">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us what you need…" required></textarea>
+</div>
+
+<div class="form-actions">
+<button class="btn primary" type="submit">Send Message</button>
+<button class="btn ghost" type="button" id="copyBtn">Copy Message</button>
+</div>
+
+<p class="note full" style="margin:8px 0 0">
+When you click <b>Send Message</b>, your email app opens with everything pre-filled. Just press Send.
+</p>
+</form>
+</div>
+</div>
+</section>
+
 </nav>
 
 <a class="btn primary" href="#survey">Take the Survey</a>
@@ -322,6 +390,58 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe7dC6npY_M7YZVJO3pRLLzMii3toO1gdcc-lXtTN18Tl9-Lw/viewform?usp=header";
 const surveyLink = document.getElementById('surveyLink');
 surveyLink.href = GOOGLE_FORM_URL;
+<script>
+// Set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Your Google Form URL (survey)
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe7dC6npY_M7YZVJO3pRLLzMii3toO1gdcc-lXtTN18Tl9-Lw/viewform?usp=header";
+const surveyLink = document.getElementById('surveyLink');
+if (surveyLink && GOOGLE_FORM_URL) surveyLink.href = GOOGLE_FORM_URL;
+
+// CONTACT FORM (GitHub Pages friendly): opens email with pre-filled message
+const CONTACT_EMAIL = "aamber2107@gmail.com"; // change later to your business email if you want
+const form = document.getElementById('contactForm');
+const copyBtn = document.getElementById('copyBtn');
+
+function buildMessage(){
+const data = new FormData(form);
+const name = data.get('name') || '';
+const email = data.get('email') || '';
+const borough = data.get('borough') || '';
+const affirmation = data.get('affirmation') || '';
+const message = data.get('message') || '';
+
+return [
+`Name: ${name}`,
+`Email: ${email}`,
+`Borough: ${borough}`,
+`Affirmation: ${affirmation}`,
+``,
+`Message:`,
+`${message}`
+].join('\n');
+}
+
+form.addEventListener('submit', (e)=>{
+e.preventDefault();
+
+const body = encodeURIComponent(buildMessage());
+const subject = encodeURIComponent("DDYMH Website Contact / Affirmation");
+const mailto = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+window.location.href = mailto;
+});
+
+copyBtn.addEventListener('click', async ()=>{
+const text = buildMessage();
+try{
+await navigator.clipboard.writeText(text);
+alert('Copied!');
+}catch{
+alert('Copy failed. You can manually copy the text from the fields.');
+}
+});
 </script>
 </body>
 </html>
