@@ -6,17 +6,16 @@
 <title>Don’t Doubt Your Mother’s Hands LLC | 24-Hour Childcare</title>
 <meta name="description" content="Don’t Doubt Your Mother’s Hands LLC (DDYMH) provides licensed 24-hour, non-traditional childcare across New York City—supporting families who need care outside traditional hours." />
 <meta name="theme-color" content="#0B3C5D" />
+
 <style>
 :root{
 --ink:#0B3C5D;
 --ink2:#0A2D44;
---bg:#0B3C5D;
 --paper:#ffffff;
 --soft:#F5F7FA;
 --muted:#5A6772;
 --line:#E6ECF2;
 --accent:#00A9A5;
---accent2:#F3C969;
 --radius:18px;
 --shadow:0 10px 30px rgba(11,60,93,.12);
 --shadow2:0 8px 18px rgba(0,0,0,.08);
@@ -31,19 +30,19 @@ a{color:inherit;text-decoration:none}
 .topbar{position:sticky;top:0;z-index:50;background:rgba(245,247,250,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px;min-width:240px}
-.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--ink));box-shadow:var(--shadow2)}
 .brand strong{display:block;font-size:14px;line-height:1.1;color:var(--ink)}
 .brand span{display:block;font-size:12px;color:var(--muted)}
 nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 nav a{font-size:13px;color:var(--ink2);padding:8px 10px;border-radius:12px}
 nav a:hover{background:#ffffff;border:1px solid var(--line);padding:7px 9px}
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:10px 14px;font-weight:700;font-size:13px;border:1px solid transparent;cursor:pointer}
 .btn.primary{background:var(--ink);color:#fff;box-shadow:var(--shadow2)}
 .btn.primary:hover{background:var(--ink2)}
 .btn.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
 .btn.ghost:hover{border-color:#d8e2ec}
 
-/* Hero */
+/* Cards / layout */
 .hero{padding:54px 0 24px}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
@@ -56,12 +55,10 @@ h1{margin:12px 0 8px;font-size:36px;line-height:1.08;color:var(--ink)}
 .pill{font-size:12px;color:var(--ink2);background:var(--soft);border:1px solid var(--line);padding:8px 10px;border-radius:999px}
 
 .side{padding:22px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
-.side:before{content:"";position:absolute;inset:-120px -120px auto auto;width:260px;height:260px;border-radius:60px;background:radial-gradient(circle at 30% 30%, rgba(243,201,105,.45), rgba(0,169,165,.18), rgba(11,60,93,.05));transform:rotate(20deg)}
 .mini h3{margin:0 0 6px;font-size:14px;color:var(--ink)}
 .mini p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
 .mini{position:relative;z-index:1;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:16px;padding:14px}
 
-/* Sections */
 section{padding:22px 0}
 .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
 .section-title h2{margin:0;font-size:18px;color:var(--ink)}
@@ -78,40 +75,42 @@ section{padding:22px 0}
 .list ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.55}
 .note{font-size:12px;color:var(--muted);margin-top:10px}
 
-/* Survey callout */
 .callout{padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .callout strong{color:var(--ink)}
 .callout p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
-/* Contact */
-.contact{padding:16px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+/* Contact form */
+form.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 label{display:block;font-size:12px;color:var(--ink);font-weight:700;margin-bottom:6px}
 input,textarea,select{width:100%;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:13px}
 textarea{min-height:110px;grid-column:1/-1;resize:vertical}
 .full{grid-column:1/-1}
 .form-actions{display:flex;gap:10px;flex-wrap:wrap;grid-column:1/-1;margin-top:4px}
 
-/* Footer */
 footer{padding:22px 0 40px;color:var(--muted);font-size:12px}
 .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}
 
-/* Responsive */
 @media (max-width: 900px){
 .hero-grid{grid-template-columns:1fr;}
 .grid3{grid-template-columns:1fr;}
 .two{grid-template-columns:1fr;}
-form{grid-template-columns:1fr;}
 nav{display:none}
+form.contact-form{grid-template-columns:1fr;}
 }
 </style>
 </head>
+
 <body>
 <div class="topbar">
 <div class="wrap">
 <div class="row">
 <a class="brand" href="#top" aria-label="Home">
-<div class="mark" aria-hidden="true"></div>
+<img
+src="DDYMH_Logo.png"
+alt="DDYMH Logo"
+style="width:38px;height:38px;border-radius:12px;object-fit:contain;box-shadow:var(--shadow2);background:#fff;border:1px solid var(--line);padding:4px"
+onerror="this.style.display='none';"
+/>
 <div>
 <strong>Don’t Doubt Your Mother’s Hands LLC</strong>
 <span>24-Hour Childcare • NYC-Wide</span>
@@ -126,7 +125,7 @@ nav{display:none}
 <a href="#contact">Contact</a>
 </nav>
 
-<a class="btn primary" href="#contact">Request Info</a>
+<a class="btn primary" href="#survey">Take the Survey</a>
 </div>
 </div>
 </div>
@@ -266,36 +265,84 @@ for families who need evening, overnight, and early-morning care.
 <p>Help us measure demand for 24-hour childcare—especially in areas with limited childcare options.</p>
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
-<a class="btn primary" href="#" id="surveyLink">Open Survey</a>
-<a class="btn ghost" href="#contact">Share Feedback</a>
+<a class="btn primary" href="#" id="surveyLink" target="_blank" rel="noopener">Open Survey</a>
+<a class="btn ghost" href="#contact">Contact Us</a>
 </div>
 </div>
-<p class="note">Replace the survey link once your Google Form is created (we can add it for you).</p>
+
+<div class="two" style="margin-top:12px">
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Why this survey matters</h3>
+<ul>
+<li>Shows real demand for 24-hour childcare in NYC</li>
+<li>Strengthens grants, partnerships, and funding requests</li>
+<li>Helps us choose the best first site based on need</li>
+</ul>
+<p class="note">Please share the survey with parents, caregivers, and community partners.</p>
+</div>
+
+<div class="card list">
+<h3 style="margin:0;color:var(--ink)">Scan the QR code</h3>
+<p class="note" style="margin-top:8px">Upload your QR image named <b>DDYMH_Survey_QR.png</b> (same folder as index.html).</p>
+
+<div style="margin-top:10px;background:#fff;border:1px dashed var(--line);border-radius:16px;padding:14px;text-align:center">
+<img
+src="DDYMH_Survey_QR.png"
+alt="DDYMH Survey QR Code"
+style="max-width:220px;width:100%;height:auto"
+onerror="this.style.display='none'; this.parentElement.innerHTML='<p class=&quot;note&quot;>QR image not found. Upload your QR image and name it <b>DDYMH_Survey_QR.png</b>.</p>';"
+/>
+</div>
+</div>
+</div>
 </div>
 </section>
 
+<!-- ✅ FIXED CONTACT SECTION (single, clean, no overlap) -->
 <section id="contact">
 <div class="wrap">
 <div class="section-title">
 <h2>Contact</h2>
-<p>Request info, partnership discussions, or updates.</p>
+<p>Inquiries, partnerships, and affirmations.</p>
 </div>
 
-<div class="card contact">
-<p class="sub" style="margin:0">Use this form to send a message. (This demo page doesn’t send emails yet—see notes below.)</p>
+<div class="card list">
+<p class="sub" style="margin:0">
+We’d love to hear from you. Fill out the form below and click <b>Send Message</b>.
+It will open your email app with everything pre-filled.
+</p>
 
-<form id="contactForm">
+<p class="note" style="margin-top:10px">
+Email: <a id="contactEmailLink" href="mailto:dontdoubtyourmothershands@gmail.com"><b>dontdoubtyourmothershands@gmail.com</b></a>
+</p>
+
+<form class="contact-form" id="contactForm">
 <div>
-<label for="name">Name</label>
-<input id="name" name="name" placeholder="Your name" required />
+<label for="c_name">Name</label>
+<input id="c_name" name="name" placeholder="Your name" required />
 </div>
+
 <div>
-<label for="email">Email</label>
-<input id="email" type="email" name="email" placeholder="you@email.com" required />
+<label for="c_email">Your Email</label>
+<input id="c_email" type="email" name="email" placeholder="you@email.com" required />
 </div>
+
 <div>
-<label for="borough">Borough</label>
-<select id="borough" name="borough">
+<label for="c_reason">Reason</label>
+<select id="c_reason" name="reason" required>
+<option value="" selected disabled>Select one…</option>
+<option>Family inquiry</option>
+<option>Partnership</option>
+<option>Space / property lead</option>
+<option>Grant / funding</option>
+<option>Volunteer / support</option>
+<option>Other</option>
+</select>
+</div>
+
+<div>
+<label for="c_borough">Borough</label>
+<select id="c_borough" name="borough">
 <option>Brooklyn</option>
 <option>Manhattan</option>
 <option>Queens</option>
@@ -304,28 +351,32 @@ for families who need evening, overnight, and early-morning care.
 <option>Not sure</option>
 </select>
 </div>
-<div>
-<label for="topic">Topic</label>
-<select id="topic" name="topic">
-<option>Family inquiry</option>
-<option>Partnership</option>
-<option>Space / property lead</option>
-<option>Grant / funding</option>
-<option>Other</option>
+
+<div class="full">
+<label for="c_affirmation">Affirmation</label>
+<select id="c_affirmation" name="affirmation" required>
+<option value="" selected disabled>Select one…</option>
+<option>I support 24-hour childcare because families deserve peace of mind.</option>
+<option>Every parent deserves safe, dependable childcare—no matter the schedule.</option>
+<option>Our community is stronger when working families are supported.</option>
+<option>Other (I’ll write my own below)</option>
 </select>
 </div>
-<div class="full">
-<label for="message">Message</label>
-<textarea id="message" name="message" placeholder="Tell us what you need…" required></textarea>
-</div>
-<div class="form-actions">
-<button class="btn primary" type="submit">Save Message</button>
-<button class="btn ghost" type="button" id="copyBtn">Copy Message Text</button>
-</div>
-</form>
 
-<p class="note"><b>To make this live:</b> we can connect the form to Google Forms, Formspree, Mailchimp, or a simple backend.
-If you tell me where you want to host the site (Wix, Squarespace, Google Sites, WordPress, GitHub Pages), I’ll tailor it.</p>
+<div class="full">
+<label for="c_message">Message</label>
+<textarea id="c_message" name="message" placeholder="Tell us what you need, or how you’d like to partner…" required></textarea>
+</div>
+
+<div class="form-actions">
+<button class="btn primary" type="submit">Send Message</button>
+<button class="btn ghost" type="button" id="copyBtn">Copy Message</button>
+</div>
+
+<p class="note full" style="margin:8px 0 0">
+Tip: If your email app doesn’t open, use <b>Copy Message</b> and email us directly.
+</p>
+</form>
 </div>
 </div>
 </section>
@@ -342,44 +393,47 @@ If you tell me where you want to host the site (Wix, Squarespace, Google Sites, 
 </main>
 
 <script>
-// Set year
+// Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Replace this with your Google Form URL when ready:
-const GOOGLE_FORM_URL = ""; // e.g., "https://forms.gle/XXXX"
+// ✅ Survey link
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe7dC6npY_M7YZVJO3pRLLzMii3toO1gdcc-lXtTN18Tl9-Lw/viewform?usp=header";
 const surveyLink = document.getElementById('surveyLink');
-if (GOOGLE_FORM_URL) surveyLink.href = GOOGLE_FORM_URL;
+if (surveyLink) surveyLink.href = GOOGLE_FORM_URL;
 
-// Contact form (local demo): save message to clipboard-friendly text
+// ✅ Contact form -> mailto (works on GitHub Pages)
+const CONTACT_EMAIL = "dontdoubtyourmothershands@gmail.com";
 const form = document.getElementById('contactForm');
 const copyBtn = document.getElementById('copyBtn');
 
 function buildMessage(){
 const data = new FormData(form);
 return [
-`Name: ${data.get('name')}`,
-`Email: ${data.get('email')}`,
-`Borough: ${data.get('borough')}`,
-`Topic: ${data.get('topic')}`,
-`Message: ${data.get('message')}`
+`Name: ${data.get('name') || ''}`,
+`Email: ${data.get('email') || ''}`,
+`Reason: ${data.get('reason') || ''}`,
+`Borough: ${data.get('borough') || ''}`,
+`Affirmation: ${data.get('affirmation') || ''}`,
+``,
+`Message:`,
+`${data.get('message') || ''}`
 ].join('\n');
 }
 
 form.addEventListener('submit', (e)=>{
 e.preventDefault();
-const text = buildMessage();
-localStorage.setItem('ddymh_last_message', text);
-alert('Saved! (Demo)\n\nNext: connect this form to email or Google Sheets.');
-form.reset();
+const subject = encodeURIComponent("DDYMH Website Inquiry / Partnership");
+const body = encodeURIComponent(buildMessage());
+window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 });
 
 copyBtn.addEventListener('click', async ()=>{
-const text = localStorage.getItem('ddymh_last_message') || buildMessage();
+const text = buildMessage();
 try{
 await navigator.clipboard.writeText(text);
-alert('Copied to clipboard!');
+alert('Copied!');
 }catch{
-alert('Copy failed. You can manually copy from the message fields.');
+alert('Copy failed. You can manually copy from the fields.');
 }
 });
 </script>
